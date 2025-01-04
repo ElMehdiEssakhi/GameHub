@@ -1,4 +1,4 @@
 <?php
             session_unset();
-            header("location:gamehub.html");
+            header("location:index.html");
             ?>
