@@ -95,7 +95,7 @@
             <div class="menu">
                     <div class="menu-item"> <button type="button" class="botonat">Home</button> </div>
                     <div class="menu-item"> <button type="button" class="botonat">Game News</button></div>
-                    <div class="menu-item"> <button type="button" class="botonat">Need Help</button> </div>
+                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='Q&A.php'">Need Help</button> </div>
                     <div class="menu-item"> <button type="button" class="botonat">Support Us</button> </div>
             </div>
     <input id="search" type="text" placeholder="Search For Games">
