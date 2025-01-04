@@ -1,0 +1,200 @@
+body{
+  margin: 0;
+}
+.logo{
+   width: 100px;
+   height: 100px;
+   padding: 20px;
+}
+#onwan{
+  font-family:Arial, Helvetica, sans-serif;font-size: 22px;
+  font-size: large; 
+  padding-left: 10px;
+  color: white;
+}
+
+#signup button{
+  position:absolute;
+  right: 10px;
+  top: 60px;
+  font-size: 16px;
+  border-radius: 100px;
+  border: none;
+  padding: 8px 20px 8px 20px ;
+  background-color: #2ba8fb;
+  color: #ffffff;
+  transition: all 0.5s;
+}
+#signup button:hover{
+  background-color: #6fc5ff;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+#signup button:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+#lpop{
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:#f1f7fe ;
+  border: none;
+  padding: 0;
+}
+.t9yad{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+.onwan {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:700;
+  font-size: 25px;
+}
+.infos {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem 0 .5rem;
+  width: 100%;
+}
+.input{
+  background: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 1px 11px;
+}
+.login{
+  background-color: #e0ecfb;
+  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+  padding: 6px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.login a {
+  font-weight: bold;
+  color: #0066ff;
+  transition: color .3s ease;
+}
+.login a:hover{
+  color: #005ce6;
+  text-decoration: underline;
+}
+.finalsignup {
+  background-color: #0066ff;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.finalsignup:hover{
+  scale: 1.05;
+  background-color: #005ce6;
+}
+body{ /*background-image:url(images/background.jpg) ;   */
+    background-repeat: no-repeat;
+    background-size: contain;}
+
+
+#linkat{
+  background-image: url(picsgamehub/posters/poster.jpg);
+  background-size:auto;
+
+}
+.tablo{
+  text-align: center;
+  width: 100%;
+  
+}
+.tablo th{
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.button{
+    padding: 16px 55px;
+    border: 2px outset buttonborder ;
+    color: white;
+    background-color: #eb2d1c;
+    border-bottom: solid 4px #94180d;
+    text-decoration: none;
+    border-radius: 10px;
+    background-image: url(picsgamehub/posters/Reddeadcover.webp);
+}
+.button:hover{
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+#search{
+    width: 400px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    color: white;  
+    margin-top: 40px;
+    padding-left: 10px;
+    margin-left: 10px; 
+    margin-bottom: 40px;
+}
+
+.games{
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.games div{
+  height: 350px;
+  width: 200px;
+  margin: 50px;
+  gap: 20px;
+}
+.games .smya{
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-style: oblique;
+}
+.games a{
+  text-decoration: none;
+  color: black;
+}
+.games img{
+  width: 200px;
+  height: 300px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  border: solid;
+  border-radius: 20px;
+  cursor:pointer;
+
+}
+.games img:hover{
+  transform: scale(1.2);
+  opacity: 0.8; 
+  
+}
+.games p{
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+
+
+

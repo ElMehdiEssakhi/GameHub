@@ -1,0 +1,122 @@
+
+header{
+    border-radius: 10px;
+  }
+  
+  .logo{
+     width: 100px;
+     height: 100px;
+     padding: 20px;
+  }
+  #onwan{
+    font-family:Arial, Helvetica, sans-serif;font-size: 22px;
+    font-size: large; 
+    padding-left: 10px;
+    color: white;
+  }
+  #sign{
+    position:absolute;
+    right: 0;
+    padding-right: 30px;
+    padding-top: 60px;
+  
+  }
+  #sign a{
+    border: 2px outset buttonborder;
+    text-decoration: none;
+    color: white;
+    padding: 16px 20px;
+    background-color: #2F8486;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50px;
+    border-bottom: solid 2px gray;
+  }
+  #sign a:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  body{ /*background-image:url(images/background.jpg) ;   */
+      background-repeat: no-repeat;
+      background-size: contain;}
+  
+  
+  #linkat{
+    background-image: url(poster.jpg);
+    background-size:auto;
+    border-radius: 10px;
+  }
+  .tablo{
+    text-align: center;
+    color: bisque;
+    width: 100%;
+    
+  }
+  .tablo th{
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .button{
+      padding: 16px 55px;
+      border: 2px outset buttonborder ;
+      color: white;
+      background-color: #eb2d1c;
+      border-bottom: solid 4px #94180d;
+      text-decoration: none;
+      border-radius: 10px;
+      background-image: url(Reddeadcover.webp);
+  }
+  .button:hover{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  #search{
+      width: 400px;
+      height: 35px;
+      border-radius: 10px;
+      background-color: rgb(0, 0, 0);
+      color: white;  
+      margin-top: 40px;
+      padding-left: 10px;
+      margin-left: 10px; 
+      margin-bottom: 40px;
+  }
+  
+  #games{
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  
+  
+  }
+  #games td{
+    width: 240px;
+    height: 345px;
+    /* border: solid red; */
+    padding: 20px;
+   margin: 0 auto;
+  
+  }
+  #games img{
+    width: 200px;
+    height: 300px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    left: 17px;
+    border: solid;
+    border-radius: 20px;
+  
+  }
+  #games img:hover{
+    transform: scale(1.1);
+    opacity: 0.2; 
+    
+  }
+  #games .smya{
+    text-align: center;
+  }
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="eldenring1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden ring</title>
+    <script>function scrollToSlide(index) {
+        const container = document.querySelector(".tsawer");
+        const slideWidth = container.scrollWidth / container.children.length;
+        container.scrollTo({
+            left: index * slideWidth,
+            behavior: "smooth",
+        });
+    }
+    </script>
+</head>
+<body style="background-image: url(picsgamehub/eldenringpics/erpost.jpg);";>
+        <div id="contain">
+            <p id="smya">Elden Ring</p>
+            <!-- <div id="download"><a  href="https://store.steampowered.com/app/1245620/ELDEN_RING/">DOWNLOAD</a></div> -->
+            <div id="download"><button class="button"><span class="button-content">Download </span></button></div>
+            <div id="desc">
+                <p>Genre:Action,RPG</p> 
+                <p>Developer: FromSoftware, Inc.</p>
+                <p>Release Date:25 Feb, 2022</p>
+                <p>Storage: 60 GB available</p>
+            </div>
+               <!--<div class="slide-tsawer-wraper">
+                <div class="tsawer">
+                    <img id="slide-1" src="picsgamehub/eldenringpics/eldenring1.jpg">
+                    <img id="slide-2" src="picsgamehub/eldenringpics//eldenring2.jpg">
+                    <img id="slide-3" src="picsgamehub/eldenringpics/eldenring3.jpg">
+                    <img id="slide-4" src="picsgamehub/eldenringpics/eldenring4.avif">
+                </div>
+                <div class="tsawer-nav">
+                    <a  href="#slide-1"></a>
+                    <a  href="#slide-2"></a>
+                    <a  href="#slide-3"></a>
+                    <a  href="#slide-4"></a>
+                </div>
+            </div> -->
+          <div class="slide-tsawer-wraper">
+                <div class="tsawer">
+                    <img src="picsgamehub/eldenringpics/eldenring1.jpg" alt="Slide 1">
+                    <img src="picsgamehub/eldenringpics/eldenring2.jpg" alt="Slide 2">
+                    <img src="picsgamehub/eldenringpics/eldenring3.jpg" alt="Slide 3">
+                    <img src="picsgamehub/eldenringpics/eldenring4.avif" alt="Slide 4">
+                </div>
+                <div class="tsawer-nav">
+                    <button onclick="scrollToSlide(0)"></button>
+                    <button onclick="scrollToSlide(1)"></button>
+                    <button onclick="scrollToSlide(2)"></button>
+                    <button onclick="scrollToSlide(3)"></button>
+                </div>
+            </div> 
+            <br>
+            <br>
+            <br>  
+        </div>
+        <div id="pic"><img src="picsgamehub/posters/elden ring.jpg"></div>
+</body>
+</html>

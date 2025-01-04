@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mafia.css">
+    <title>Mafia I</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            const container=document.querySelector(".tsawer")
+            const previous=document.getElementById("prev")
+            const next=document.getElementById("next")
+            const view_width=container.scrollWidth/container.children.length
+            let current=0;
+            next.addEventListener("click",function(){
+                if(current<container.children.length-1){
+                current++
+                container.scrollTo({
+                    left:current*view_width,
+                })
+                }else{
+                    current=0;
+                    container.scrollTo({
+                        left:current*view_width,
+                    })
+                }
+            })
+            previous.addEventListener("click",function(){
+                if(current>0){
+                current--
+                container.scrollTo({
+                    left:current*view_width,
+                })
+                }else{
+                    current=container.children.length-1;
+                    container.scrollTo({
+                        left:current*view_width,
+                    })
+                }
+            })
+            const interval=setInterval(function(){
+                if(current<container.children.length-1){
+                    current++
+                    container.scrollTo({
+                        left:current*view_width,
+                    })
+                    }else{
+                        current=0;
+                        container.scrollTo({
+                            left:current*view_width,
+                        })
+                    }
+            },3000);
+        })
+    </script>
+</head>
+<body>
+        <div id="contain">
+            <p id="smya">Mafia I</p>
+            <!-- <div id="download"><a  href="https://store.steampowered.com/app/1030840/Mafia_Definitive_Edition/">DOWNLOAD</a></div> -->
+            <div id="download"><button class="button"><span class="button-content">Download </span></button></div>
+            <div id="desc">
+                <p>Genre:Action, Adventure</p> 
+                <p>Developer: Hangar 13</p>
+                <p>Release Date:25 Sep, 2020</p>
+                <p>Storage: 50 GB available</p>
+            </div>
+            <div class="slide-tsawer-wraper">
+                <button class="navi" id="prev">&#8249;</button>
+                <div class="tsawer">
+                    <img id="slide-1" src="picsgamehub/mafia/mafia1.webp">
+                    <img id="slide-2" src="picsgamehub/mafia/mafia2.jpg">
+                    <img id="slide-3" src="picsgamehub/mafia/mafia3.avif">
+                    <img id="slide-4" src="picsgamehub/mafia/mafia4.webp">
+                </div>
+                <button class="navi" id="next">&#8250;</button>
+            </div>
+            <br>
+            <br>
+            <br>
+            
+            
+        </div>
+        <div id="pic"><img src="picsgamehub/posters/mafia.jpg"></div>
+</body>
+</html>

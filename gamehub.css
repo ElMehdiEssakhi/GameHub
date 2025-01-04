@@ -1,0 +1,280 @@
+body{
+  margin: 0;
+}
+.logo{
+   width: 100px;
+   height: 100px;
+   padding: 20px;
+}
+#onwan{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+  padding-left: 10px;
+  color: white;
+}
+#up{
+  display: flex;
+  justify-content: space-between;
+}
+#tswirawtitle{
+  display: flex;
+  justify-content: space-around;
+}
+#btnt9yad{
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  width: 15%;
+
+}
+#signup button{
+  /* position:absolute;
+  right: 19px;
+  top: 60px; */
+  font-size: 16px;
+  border-radius: 100px;
+  border: none;
+  padding: 8px 20px 8px 20px ;
+  background-color: #d00000;
+  color: #ffffff;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#signup button:hover{
+  background-color: #9d0208;
+  box-shadow: 0 0 20px #dc2f02;
+  transform: scale(1.1);
+}
+#signup button:active {
+  background-color: #000000;
+  transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+#signuppop{
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:#f1f7fe ;
+  border: none;
+  padding: 0;
+}
+.t9yad{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+#onwan {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:700;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+.infos {
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #fff;
+  margin: 1rem 0 .5rem;
+  width: 100%;
+}
+#fullnameinput{
+  display: flex;
+}
+#lname{
+  border-left:1px solid #eee ;
+}
+.input{
+  background: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  padding: 1px 11px;
+}
+.login{
+  background-color: #fde8e8;
+  box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+  padding: 6px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.login a {
+  font-weight: bold;
+  color: #dc2f02;
+  transition: color .3s ease;
+}
+.login a:hover{
+  color: #9d0208;
+  text-decoration: underline;
+}
+.finalsignup {
+  background-color: #f90d06;
+  color: #fff;
+  border: 0;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.finalsignup:hover{
+  scale: 1.05;
+  background-color: #e8120b;
+}
+body{ /*background-image:url(images/background.jpg) ;   */
+    background-repeat: no-repeat;
+    background-size: contain;}
+
+.menu{
+    /* background-image: url(picsgamehub/posters/poster.jpg); */
+    background-size:auto;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.botonat{
+  padding: 16px 55px;
+  background-color: #eb2d1c;
+  border-bottom: solid 4px #94180d;
+  border-radius: 10px;color: white;
+  font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+  cursor: pointer;
+}
+/* .botonat:hover{
+  transform: scale(1.1);
+}  */
+#search{
+    width: 400px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #0D0E0F;
+    color: white;  
+    margin-top: 20px;
+    padding-left: 10px;
+    margin-left: 10px; 
+    margin-bottom: 40px;
+}
+
+.games{
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.games div{
+  height: 350px;
+  width: 200px;
+  margin: 50px;
+  gap: 20px;
+}
+.games .smya{
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-style: oblique;
+  color: rgb(206, 200, 189);
+}
+.games a{
+  text-decoration: none;
+  color: black;
+}
+.games img{
+  width: 200px;
+  height: 300px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  border: solid;
+  border-radius: 20px;
+  cursor:pointer;
+
+}
+.games img:hover{
+  transform: scale(1.2);
+  opacity: 0.8; 
+  
+}
+.games p{
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+#login button{
+  /* position:absolute;
+  right: 120px;
+  top: 60px; */
+  font-size: 16px;
+  border-radius: 100px;
+  border: none;
+  padding: 8px 20px 8px 20px ;
+  background-color: #d00000;
+  color: #ffffff;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#login button:hover{
+  background-color: #9d0208;
+  box-shadow: 0 0 20px #dc2f02;
+  transform: scale(1.1);
+}
+#login button:active {
+  background-color: #000000;
+  transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+#loginpop{
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:#f1f7fe ;
+  border: none;
+  padding: 0;
+}
+.feedback{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+.pop{
+  position: fixed;
+  z-index: 100;
+}
+.close{
+  display: flex;
+  justify-content: end;
+  padding: 5px;
+}
+.close button{
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+}
+.toto{
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: red;
+}
