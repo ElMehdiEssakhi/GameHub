@@ -14,7 +14,28 @@
             window.location.href = "logout.php";
         }
     </script>
-<!-- <link rel="icon" href="images/favicon.ico.png"> -->
+    <style>
+        #wlcmsg{
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        }
+        #logoutbut{
+            font-size: 16px;
+            border-radius: 100px;
+            border: none;
+            padding: 8px 15px 8px 15px ;
+            background-color: #d00000;
+            color: #ffffff;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+        #btnkhroj{
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+            width: 20%;
+        }
+    </style>
 </head>
 
 <body style="background-color: #212529;">
@@ -24,13 +45,13 @@
                 <div><img class="logo" src="picsgamehub/posters/logo.png" alt="GameHub"></div>
                 <div id="onwan">GAMEHUB</div>
             </div>
-            <div id="btnt9yad">
+            <div id="btnkhroj">
                 <?php 
                     session_start();
                     $name=$_SESSION["username"];                    
                 ?>    
-                <div id="signup" style="color: white; font-family: Arial, Helvetica, sans-serif;"><?php echo("welcome, $name");?></div>
-                <div id="login"><button id="loginn" onclick="kill()">Log out</button></div>
+                <div id="wlcmsg" ><?php echo("welcome, $name");?></div>
+                <div><button id="logoutbut" onclick="kill()">Log out</button></div>
             </div>    
         </div>
         <dialog class="pop" id="signuppop">
