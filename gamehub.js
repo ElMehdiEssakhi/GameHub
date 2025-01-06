@@ -47,27 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const loginpop=document.getElementById("loginpop");
         const submit=document.getElementById("signbutton");
         const closebuttons = document.querySelectorAll('.close button');
-
-        signubutton.addEventListener("click", function(){
-            signupop.show();
-            loginpop.close();
+        signubutton.addEventListener("click",function(){
+            window.location.href="sign_gh.php"
         })
-        loginbutton.addEventListener("click", function(){
-            loginpop.show();
-            signupop.close();
-        })
-        document.getElementById("tologin").addEventListener("click",function(){
-            signupop.close();
-            loginpop.show();
-        })
-        document.getElementById("tosignup").addEventListener("click",function(){
-            loginpop.close();
-            signupop.show();
-        })
-        closebuttons.forEach(function(closebutton){
-            closebutton.addEventListener("click",function(){
-                this.parentElement.parentElement.close();
-            })
+        loginbutton.addEventListener("click",function(){
+            window.location.href="login_gh.php"
         })
         submit.addEventListener("click", function(event){
             const firstname=document.getElementById("fname").value;

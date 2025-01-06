@@ -43,7 +43,7 @@ $conn->close();
         #signwin{
             border-radius:8px ;
             width: 20vw;
-            height: 65vh;
+            height: 70vh;
             background:#f1f7fe ;
             display: flex;
             flex-direction: column;
@@ -58,7 +58,7 @@ $conn->close();
             display: flex;
             text-align: center;
             padding: 32px 24px 24px;
-            gap: 10px;
+            gap: 5px;
             flex-direction: column;
             align-items: center;
         }
