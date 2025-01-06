@@ -43,10 +43,7 @@ $('#search').on("input",function(){
 document.addEventListener('DOMContentLoaded', function() {
         const signubutton=document.getElementById("signupp");
         const loginbutton=document.getElementById("loginn")
-        const signupop=document.getElementById("signuppop");
-        const loginpop=document.getElementById("loginpop");
         const submit=document.getElementById("signbutton");
-        const closebuttons = document.querySelectorAll('.close button');
         signubutton.addEventListener("click",function(){
             window.location.href="sign_gh.php"
         })

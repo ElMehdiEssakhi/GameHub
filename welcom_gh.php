@@ -54,42 +54,6 @@
                 <div><button id="logoutbut" onclick="kill()">Log out</button></div>
             </div>    
         </div>
-        <dialog class="pop" id="signuppop">
-            <div class="close"><button type="button" style="font-weight: 800;">X</button></div>
-            <form id="signform" class="t9yad" action="sign_gh.php" method="post" >
-                <span class="onwan">Sign Up</span>
-                <div class="infos">
-                    <div id="fullnameinput">
-                        <input class="input" id="fname" type="text" placeholder="First Name" name="fname">
-                        <input class="input" id="lname" type="text" placeholder="Last Name" name="lname">
-                    </div>
-                    <input class="input" id="usernames" type="text" placeholder="Username" name="username">
-                    <input class="input" id="email" type="email" placeholder="Email" name="email">
-                    <input class="input" id="password" type="password" placeholder="Password" name="password">
-                    <input class="input" id="cfpassword" type="password" placeholder="Confirm Password" name="cfpassword">
-                </div>
-                <button id="signbutton" class="finalsignup" type="submit">Sign Up</button>
-                <div class="feedback" id="signupfeedback"></div>
-            </form>
-            <div class="login">
-                <p>Already have an account?<button class="toto" id="tologin" >Log in</button></p>
-            </div>
-        </dialog>
-        <dialog class="pop" id="loginpop" >
-            <div class="close"><button type="button" style="font-weight: 800;">X</button></div>
-            <form id="loginform" class="t9yad" action="login_gh.php" method="post" >
-                <span class="onwan">Log In</span>
-                <div class="infos">
-                    <input class="input" id="usernamel" type="text" placeholder="Username" name="username">
-                    <input class="input" id="lgpassword" type="password" placeholder="Password" name="password">
-                </div>
-                <button class="finalsignup" type="submit">Log In</button>
-                <div class="feedback" id="loginfeedback"></div>
-            </form>
-            <div class="login">
-                <p>Dont have an account?<button class="toto" id="tosignup" >Sign Up</button></p>
-            </div>
-        </dialog>
     </header>
     <div class="lmain" >
             <div class="menu">
