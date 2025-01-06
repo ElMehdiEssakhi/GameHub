@@ -1,29 +1,28 @@
 <?php
-
+session_start();
 
 $conn = new mysqli("localhost", "root", "", "gamehub");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$fb="before";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $fuser=$_POST["fname"];
-    $luser=$_POST["lname"];
-    $username=$_POST["username"];
-    $email=$_POST["email"];
-    $pass=$_POST["password"];
-
-    $sql = "INSERT INTO users (`first name`,`last name`,`username`,`email`,`password`) VALUES (?,?, ?, ?,?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssss", $fuser,$luser,$username, $email, $pass);
-    if ($stmt->execute()) {
-        echo "Signup successful!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
-}
-
+            $fuser=$_POST["fname"];
+            $luser=$_POST["lname"];
+            $username=$_POST["username"];
+            $email=$_POST["email"];
+            $pass=$_POST["password"];
+            $sql = "INSERT INTO users (`first name`,`last name`,`username`,`email`,`password`) VALUES (?,?, ?, ?,?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssss", $fuser,$luser,$username, $email, $pass);
+            if ($stmt->execute()) {
+                $_SESSION["username"]=$username;
+                header("location:welcom_gh.php");
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+            $stmt->close();
+        }
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -44,18 +43,22 @@ $conn->close();
         #signwin{
             border-radius:8px ;
             width: 20vw;
+            height: 65vh;
             background:#f1f7fe ;
-            padding: 0;
+            display: flex;
             flex-direction: column;
+            justify-content: space-between;
             overflow: hidden;
             box-shadow: 5px 5px 15px 0px black;
+            min-width: 250px;
+            min-height: 400px;
 
         }
         #signform{
             display: flex;
             text-align: center;
             padding: 32px 24px 24px;
-            gap: 16px;
+            gap: 10px;
             flex-direction: column;
             align-items: center;
         }
@@ -72,6 +75,12 @@ $conn->close();
             overflow: hidden;
             border-radius: 8px;
         }
+        #fullnameinput{
+            display: flex;
+        }
+        #lname{
+            border-left:1px solid #eee ;
+        }
         .input{
             border: none;
             width: 100%;
@@ -82,7 +91,7 @@ $conn->close();
         .tologin{
             background-color: #fde8e8;
             padding: 6px;
-            margin: 0;
+            margin: 0px;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
         }
@@ -109,11 +118,35 @@ $conn->close();
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
         }
+        .feedback{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
     </style>
     <script>
         function tologin(){
             window.location.href="login_gh.php"
         }
+        document.addEventListener('DOMContentLoaded', function() {
+            const submit=document.querySelector(".finalsign");
+            
+            submit.addEventListener("click", function(event){
+                const firstname=document.getElementById("fname").value;
+                const lastname=document.getElementById("lname").value;
+                const email=document.getElementById("email").value;
+                const pass=document.getElementById("password").value;
+                const cfpass=document.getElementById("cfpassword").value;
+                if(!firstname||!lastname||!email||!pass||!cfpass){
+                    event.preventDefault();
+                    document.getElementById("signupfeedback").innerHTML="please fill all the fields"
+                }
+                if(pass!==cfpass){
+                    event.preventDefault();
+                    document.getElementById("signupfeedback").innerHTML="please confirm the password"
+                }
+            })  
+        });
+        
     </script>
 </head>
 <body>
@@ -121,18 +154,17 @@ $conn->close();
             <form id="signform" class="t9yad" action="sign_gh.php" method="post" >
                 <span class="onwan">Sign Up</span>
                 <div class="infos">
-                    <input class="input" id="usernamel" type="text" placeholder="Username" name="username">
-                    <input class="input" id="lgpassword" type="password" placeholder="Password" name="password">
+                    <div id="fullnameinput">
+                        <input class="input" id="fname" type="text" placeholder="First Name" name="fname">
+                        <input class="input" id="lname" type="text" placeholder="Last Name" name="lname">
+                    </div>
+                    <input class="input" id="usernames" type="text" placeholder="Username" name="username">
+                    <input class="input" id="email" type="email" placeholder="Email" name="email">
+                    <input class="input" id="password" type="password" placeholder="Password" name="password">
+                    <input class="input" id="cfpassword" type="password" placeholder="Confirm Password" name="cfpassword">
                 </div>
-                <button class="finalsign" type="submit">Log In</button>
-                <div class="feedback" id="signfeedback">
-                <?php if($fb=="noone"): ?>
-                    <p>No such person</p>
-                <?php elseif($fb=="wrong"): ?>
-                    <p>Wrong password </p>
-                <?php elseif($fb=="emty"): ?>
-                    <p>Please enter a valid username </p>
-                <?php endif; ?>
+                <button class="finalsign" type="submit">Sign Up</button>
+                <div class="feedback" id="signupfeedback">
                 </div>
             </form>
             <div class="tologin">

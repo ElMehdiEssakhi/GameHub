@@ -114,6 +114,10 @@ $conn->close();
             font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
         }
+        .feedback{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+        }
     </style>
     <script>
         function tosignup(){
