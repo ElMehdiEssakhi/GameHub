@@ -130,7 +130,7 @@ $conn->close();
             <form id="loginform" class="t9yad" action="login_gh.php" method="post" >
                 <span class="onwan">Log In</span>
                 <div class="infos">
-                    <input class="input" id="usernamel" type="text" placeholder="Username" name="username">
+                    <input class="input" id="usernamel" type="text" placeholder="Username" name="username" value="<?php if(!empty($user)){echo $user;} ?>">
                     <input class="input" id="lgpassword" type="password" placeholder="Password" name="password">
                 </div>
                 <button class="finallogin" type="submit">Log In</button>

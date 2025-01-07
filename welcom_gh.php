@@ -1,4 +1,11 @@
-
+<?php 
+session_start();              
+if (!isset($_SESSION['username'])) {
+    header("Location: login_gh.php");
+    exit();
+}
+$name=$_SESSION["username"]; 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,11 +52,7 @@
                 <div><img class="logo" src="picsgamehub/posters/logo.png" alt="GameHub"></div>
                 <div id="onwan">GAMEHUB</div>
             </div>
-            <div id="btnkhroj">
-                <?php 
-                    session_start();
-                    $name=$_SESSION["username"];                    
-                ?>    
+            <div id="btnkhroj">   
                 <div id="wlcmsg" ><?php echo("welcome, $name");?></div>
                 <div><button id="logoutbut" onclick="kill()">Log out</button></div>
             </div>    
