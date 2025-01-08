@@ -8,16 +8,22 @@ if ($conn->connect_error) {
 $fb="before";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(!empty($_POST["username"]) && !empty($_POST["password"])){
-        $user=$_POST["username"];
+        $username=$_POST["username"];
         $pass=$_POST["password"];
-        $sql="SELECT `password` FROM users WHERE username='$user'";
+        $sql="SELECT * FROM users WHERE username='$username'";
         $result=$conn->query($sql);
         if($result->num_rows==1){
             $row=$result->fetch_assoc();
             $pw=$row['password'];
             if($pw===$pass){
-                $_SESSION["username"]=$user;
-                header("location:welcom_gh.php");
+                $_SESSION["username"]=$username;
+                $email=$row['email'];
+                $_SESSION["email"]=$email;
+                $first_name=$row['first name'];
+                $last_name=$row['last name'];
+                $_SESSION["firstname"]=$first_name;
+                $_SESSION["lastname"]=$last_name;
+                header("location:welcome_gh.php");
             }else{
                 $fb="wrong";
             }
@@ -45,6 +51,7 @@ $conn->close();
             align-items: center;
             background-image: url(picsgamehub/login_bg.jpg);
             background-size: cover;
+            font-family: "Open Sans", sans-serif;
         }
         #loginwin{
             border-radius:8px ;
@@ -67,7 +74,6 @@ $conn->close();
         .onwan{
             display: flex;
             align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
             font-weight:700;
             font-size: 25px;
         }
@@ -88,7 +94,6 @@ $conn->close();
             background-color: #fde8e8;
             padding: 6px;
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
         }
         .finallogin {
@@ -111,11 +116,9 @@ $conn->close();
             background: none;
             cursor: pointer;
             color: red;
-            font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
         }
         .feedback{
-            font-family: Arial, Helvetica, sans-serif;
             font-weight: 600;
         }
     </style>

@@ -39,6 +39,7 @@ $conn->close();
             align-items: center;
             background-image: url(picsgamehub/login_bg.jpg);
             background-size: cover;
+            font-family: "Open Sans", sans-serif;
         }
         #signwin{
             border-radius:8px ;
@@ -65,7 +66,6 @@ $conn->close();
         .onwan{
             display: flex;
             align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
             font-weight:700;
             font-size: 25px;
         }
@@ -92,7 +92,6 @@ $conn->close();
             background-color: #fde8e8;
             padding: 6px;
             margin: 0px;
-            font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
         }
         .finalsign {
@@ -115,11 +114,9 @@ $conn->close();
             background: none;
             cursor: pointer;
             color: red;
-            font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
         }
         .feedback{
-            font-family: Arial, Helvetica, sans-serif;
             font-weight: 600;
         }
     </style>
