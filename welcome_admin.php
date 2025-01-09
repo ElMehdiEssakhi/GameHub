@@ -56,6 +56,13 @@ include("fetch_pfp.php");
         }
         #wlcmsg{
         color: white;
+        font-size: 50px;
+        margin-left: 20px;
+        }
+        #userbutdiv{
+            width: 250px;
+            display: flex;
+            justify-content:end;
         }
         .useroptnav{
             font-size: 16px;
@@ -149,8 +156,7 @@ include("fetch_pfp.php");
                 <div id="onwan">GAMEHUB</div>
             </div>
             <div id="userbar">   
-                <div id="wlcmsg" ><?php echo("welcome, $username");?></div>
-                    <div><button id="userbut" class="useroptnav" type="button"><?php echo("$first_name[0]"."$last_name[0]") ?>&nbsp;<i class="fa-regular fa-user"></i></button></div> <!-- onclick="kill()" -->
+                    <div id="userbutdiv"><button id="userbut" class="useroptnav" type="button"><?php echo("$first_name[0]"."$last_name[0]") ?>&nbsp;<i class="fa-regular fa-user"></i></button></div>
                     <div id="useroptions" >
                         <div id="userinfos">
                             <p><?php echo($email) ?></p>
@@ -173,15 +179,15 @@ include("fetch_pfp.php");
     </div>
     </header>
     <div class="lmain" >
-            <div class="menu">
-                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='welcome_gh.php'"><i class="fa-solid fa-house"></i>&nbsp;Home</button> </div>
-                    <div class="menu-item"> <button type="button" class="botonat"><i class="fa-regular fa-newspaper"></i>&nbsp;Game News</button></div>
-                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='Q&A.php'"><i class="fa-regular fa-comments"></i>&nbsp;Need Help</button> </div>
-                    <div class="menu-item"> <button type="button" class="botonat"><i class="fa-solid fa-hand-holding-dollar"></i>&nbsp;Support Us</button> </div>
-            </div>
-    <input id="search" type="text" placeholder="Search For Games">
-    <p></p>
-    <div class="games">
+        <div class="menu">
+            <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='welcome_admin.php'"><i class="fa-solid fa-house"></i>&nbsp;Home</button> </div>
+            <div class="menu-item"> <button type="button" class="botonat"><i class="fa-regular fa-newspaper"></i>&nbsp;Game News</button></div>
+            <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='Q&A_admin.php'"><i class="fa-regular fa-comments"></i>&nbsp;Need Help</button> </div>
+            <div class="menu-item"> <button type="button" class="botonat"><i class="fa-solid fa-users"></i>&nbsp;Users</button> </div>
+        </div>
+        <div id="wlcmsg" ><?php echo("welcome, $username");?></div>
+        <input id="search" type="text" placeholder="Search For Games">
+        <div class="games">
                 <div ><a href="eldenring.html"><img src="picsgamehub/posters/elden ring.jpg"><p class ="smya" style="display: none;">ELDEN RING</p></a></div> 
                 <div ><a href="thewitcher3.html"><img src="picsgamehub/thewitcher3/the witcherp.jpg"  ><p class ="smya" style="display: none;">THE WITCHER 3</p></a></div>
                 <div ><a href="cyberpunk.html"><img src="picsgamehub/posters/cyberpunk.jpg"  ><p class ="smya" style="display: none;">CYBERPUNK 2077</p></a></div>
@@ -194,9 +200,9 @@ include("fetch_pfp.php");
                 <div ><a href="daysgone.html"><img src="picsgamehub/days gone/daysgonep.jpg"  ><p class ="smya" style="display: none;">DAYS GONE</p></a></div>
                 <div ><a href="dyinglight.html"><img src="picsgamehub/posters/dying light.jpg"  ><p class ="smya" style="display: none;">DYING LIGHT</p></a></div>
                 <div ><a href="mafia.html"><img src="picsgamehub/posters/mafia.jpg"  ><p class ="smya" style="display: none;">MAFIA 1</p></a></div>
+        </div>
+        <br><br>
     </div>
-    <br><br>
-</div>
 <?php include("footer.html") ?>
 </body>
 </html> 

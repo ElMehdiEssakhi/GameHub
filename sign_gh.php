@@ -7,17 +7,20 @@ if ($conn->connect_error) {
 }
 $fb="before";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-            $fuser=$_POST["fname"];
-            $luser=$_POST["lname"];
+            $firstname=$_POST["fname"];
+            $lastname=$_POST["lname"];
             $username=$_POST["username"];
             $email=$_POST["email"];
             $pass=$_POST["password"];
             $sql = "INSERT INTO users (`first name`,`last name`,`username`,`email`,`password`) VALUES (?,?, ?, ?,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssss", $fuser,$luser,$username, $email, $pass);
+            $stmt->bind_param("sssss", $firstname,$lastname,$username, $email, $pass);
             if ($stmt->execute()) {
                 $_SESSION["username"]=$username;
-                header("location:welcom_gh.php");
+                $_SESSION["firstname"]=$firstname;
+                $_SESSION["lastname"]=$lastname;
+                $_SESSION["email"]=$email;
+                header("location:welcome_gh.php");
             } else {
                 echo "Error: " . $stmt->error;
             }
@@ -121,9 +124,6 @@ $conn->close();
         }
     </style>
     <script>
-        function tologin(){
-            window.location.href="login_gh.php"
-        }
         document.addEventListener('DOMContentLoaded', function() {
             const submit=document.querySelector(".finalsign");
             
@@ -165,7 +165,7 @@ $conn->close();
                 </div>
             </form>
             <div class="tologin">
-                <p>Already have an account?<button id="tologin" onclick="tologin()" >Log In</button></p>
+                <p>Already have an account?<button id="tologin" onclick="window.location.href='login_gh.php'" >Log In</button></p>
             </div>
         </div>
 </body>

@@ -15,11 +15,13 @@ $last_name=$_SESSION["lastname"];
 include("fetch_pfp.php");
 $feedback="beforesub";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-    if(!empty($_POST["message"])){
-        $msg=$_POST["message"];
-        $sql="INSERT INTO `messages` (username , message) VALUES ('$username','$msg')";
-        $result=$conn->query($sql);
-        if ($result) {
+    if(!empty($_POST["reply"])){
+        $reply=$_POST["reply"];
+        $message_id = intval($_POST["message_id"]);
+        $sql="UPDATE `messages` SET `reply`=? WHERE `id`=?";
+        $stmt=$conn->prepare($sql);
+        $stmt->bind_param("si",$reply,$message_id );
+        if ($stmt->execute()) {
             $feedback="sent";
         } else {
             $feedback="error";
@@ -29,9 +31,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
 }
 $sql2 = "SELECT * FROM `messages`";
-$result2=$conn->query($sql2);
+$result=$conn->query($sql2);
 $msgs=[];
-while($row=$result2->fetch_assoc()){
+while($row=$result->fetch_assoc()){
     $msgs[]=$row;
 }
 $conn->close();
@@ -176,7 +178,15 @@ $conn->close();
             border-bottom: 1px solid rgb(50, 55, 59);
             padding: 15px;
         }
-
+        #msgs input{
+            border-radius: 5px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        #msgs button{
+            height: 25px;
+            border-radius: 5px;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -239,18 +249,18 @@ $conn->close();
         </div>
     </header>
     <div class="menu">
-                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='welcome_gh.php'"><i class="fa-solid fa-house"></i>&nbsp;Home</button> </div>
+                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='welcome_admin.php'"><i class="fa-solid fa-house"></i>&nbsp;Home</button> </div>
                     <div class="menu-item"> <button type="button" class="botonat"><i class="fa-regular fa-newspaper"></i>&nbsp;Game News</button></div>
-                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='Q&A.php'"><i class="fa-regular fa-comments"></i>&nbsp;Need Help</button> </div>
-                    <div class="menu-item"> <button type="button" class="botonat"><i class="fa-solid fa-hand-holding-dollar"></i>&nbsp;Support Us</button> </div>
+                    <div class="menu-item"> <button type="button" class="botonat" onclick="window.location.href='Q&A_admin.php'"><i class="fa-regular fa-comments"></i>&nbsp;Need Help</button> </div>
+                    <div class="menu-item"> <button type="button" class="botonat"><i class="fa-solid fa-users"></i>&nbsp;Users</button> </div>
     </div>
     <div id="ktb">
-        <strong>Proceed to leave a question</strong>
-        <form action="Q&A.php" method="post">
+        <strong>Say Something</strong>
+        <form action="Q&A_admin.php" method="post">
             <input type="text" name="message" placeholder="....?">
             <button type="submit">Send</button>
             <?php if($feedback=="sent"): ?>
-                <p class="feedback"> Your Question Was Sent</p>
+                <p class="feedback"> Your Question Is Sent</p>
             <?php elseif($feedback=="emty"): ?>
                 <p class="feedback"> Write Something</p>   
             <?php elseif($feedback=="error"): ?>
@@ -270,8 +280,10 @@ $conn->close();
                 <tr id="msgs">
                     <th id="nm"><?php echo($lmsg['username'].":") ?></th>
                     <th><?php echo($lmsg['message']) ?></th>
-                    <?php if($lmsg['reply']): ?>
+                    <?php if($lmsg['reply']&&$lmsg['username']!="molchi"): ?>
                     <th><?php echo($lmsg['reply']) ?></th>
+                    <?php elseif(!$lmsg['reply']&&$lmsg['username']!="molchi"): ?>
+                    <th><form action="Q&A_admin.php" method="post"><input type="text" placeholder="answer" name="reply"><input type="hidden" name="message_id" value="<?php echo $lmsg['id']; ?>"><button type="submit">Send</button></form></th>
                     <?php else: ?>
                     <th></th>   
                     <?php endif; ?>

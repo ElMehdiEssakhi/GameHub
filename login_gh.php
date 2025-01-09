@@ -23,7 +23,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $last_name=$row['last name'];
                 $_SESSION["firstname"]=$first_name;
                 $_SESSION["lastname"]=$last_name;
-                header("location:welcome_gh.php");
+                $access=$row['role'];
+                if($access=="user"){
+                    header("location:welcome_gh.php");
+                }else if($access=="administrator"){
+                    header("location:welcome_admin.php");
+                }
             }else{
                 $fb="wrong";
             }
@@ -122,11 +127,6 @@ $conn->close();
             font-weight: 600;
         }
     </style>
-    <script>
-        function tosignup(){
-            window.location.href="sign_gh.php"
-        }
-    </script>
 </head>
 <body>
         <div class="pop" id="loginwin" >
@@ -148,7 +148,7 @@ $conn->close();
                 </div>
             </form>
             <div class="tologin">
-                <p>Dont have an account?<button id="tosignup" onclick="tosignup()" >Sign Up</button></p>
+                <p>Dont have an account?<button id="tosignup" onclick="window.location.href='sign_gh.php'" >Sign Up</button></p>
             </div>
         </div>
 </body>

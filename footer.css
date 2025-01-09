@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        footer{
+            display: flex;
+            flex-direction: column;
+            font-family: "Poppins", sans-serif;
+            color: #f8eeee;;
+            background-color:#141313 ;
+        }
+        #logowsm{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 8%;
+            padding-right: 8%;
+            border-bottom: 1px solid;
+        }
+        #logo{
+            display: flex;
+            
+            padding: 15px;
+            align-items: center;
+            gap: 20px;
+        }
+        #pic{
+            width: 70px;
+            border-radius: 15px;
+        }
+        #footeronwan{
+            font-size: 30px;
+        }
+        #sm{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        #sm button{
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.2s ease-in-out;
+            border-radius: 50%;
+            font-size: 25px;
+            border: none;
+            cursor: pointer;
+        }
+        #sm button:hover{
+            background: #fff;
+            box-shadow: 0 0 8px white;
+            transform: scale(1.1);
+          }
+        #links{
+            display:flex;
+            gap: 15%;
+            padding-left: 8%;
+        }
+        #us{
+            display: flex;
+            flex-direction: column;
+
+            gap: 5px;
+        }
+        #us a{
+            text-decoration: none;
+            color: #f8eeee;
+            transition: all 0.3s ease-in-out;
+        }
+        #us a:hover{
+            color: black;
+        }
+        #us strong{
+            border-bottom: 2px solid;
+        }
+        #secu{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        #secu a{
+            text-decoration: none;
+            color: #f8eeee;
+            transition: all 0.3s ease-in-out;
+        }
+        #secu a:hover{
+            color: black;
+        }
+        #secu strong{
+            border-bottom: 2px solid;
+        }
+        #cpr{
+            background-color:#000000;
+        }
